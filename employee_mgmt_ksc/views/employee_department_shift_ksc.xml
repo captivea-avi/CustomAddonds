@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<odoo>
+    <!--    TreeView-->
+    <record id="view_employee_department_shift_ksc_tree" model="ir.ui.view">
+        <field name="name">employee.department.shift.ksc Tree View</field>
+        <field name="model">employee.department.shift.ksc</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="shift"/>
+                <field name="employee_ids"/>
+            </tree>
+        </field>
+    </record>
+
+    <!--            FormView         -->
+
+    <record id="view_employee_department_shift_ksc_form" model="ir.ui.view">
+        <field name="name">employee.department.shift.ksc Form View</field>
+        <field name="model">employee.department.shift.ksc</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                        <field name="shift"/>
+                        <field name="employee_ids"/>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <!--    SearchView   -->
+    <record id="view_employee_department_shift_ksc_search" model="ir.ui.view">
+        <field name="name">employee.department.shift.ksc Form View</field>
+        <field name="model">employee.department.shift.ksc</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="shift"/>
+                <field name="employee_ids"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_employee_department_shift_ksc_profile" model="ir.actions.act_window">
+        <field name="name">Employee Shifts</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">employee.department.shift.ksc</field>
+        <field name="view_mode">tree,form,search</field>
+    </record>
+
+<!--    main Menu Item Show On Front Of Side -->
+    <menuitem id="employee_department_shift_sub_menu"
+              parent="employee_menu"
+              action="action_employee_department_shift_ksc_profile"
+              name="Shift"
+              groups="base.group_user"/>
+
+</odoo>

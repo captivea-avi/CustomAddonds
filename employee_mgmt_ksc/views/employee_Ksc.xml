@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<odoo>
+    <!--    TreeView-->
+    <record id="view_employee_ksc_tree" model="ir.ui.view">
+        <field name="name">employee.ksc. Tree View</field>
+        <field name="model">employee.ksc</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="department_id"/>
+                <field name="shift_id"/>
+                <field name="job_position"/>
+                <field name="salary"/>
+                <field name="hire_date"/>
+                <field name="gender"/>
+                <field name="job_type"/>
+                <field name="is_manager"/>
+                <field name="manager_id"/>
+                <field name="related_user"/>
+                <field name="employee_ids"/>
+                <field name="increment_percentage"/>
+
+            </tree>
+        </field>
+    </record>
+
+    <!--            FormView         -->
+
+    <record id="view_employee_ksc_form" model="ir.ui.view">
+        <field name="name">employee.ksc Form View</field>
+        <field name="model">employee.ksc</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <group>
+                        <field name="name"/>
+                        <field name="department_id"/>
+                        <field name="shift_id"/>
+                        <field name="job_position"/>
+                    </group>
+                    <group>
+                        <field name="salary"/>
+                        <field name="hire_date"/>
+                        <field name="gender"/>
+                        <field name="job_type"/>
+                    </group>
+                    <group>
+                        <field name="is_manager"/>
+                        <field name="manager_id"/>
+                        <field name="related_user"/>
+                        <field name="employee_ids"/>
+                        <field name="increment_percentage"/>
+                    </group>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <!--    SearchView   -->
+    <record id="view_employee_ksc_search" model="ir.ui.view">
+        <field name="name">employee.ksc Form View</field>
+        <field name="model">employee.ksc</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <field name="department_id"/>
+                <field name="shift_id"/>
+                <field name="job_position"/>
+                <field name="salary"/>
+                <field name="hire_date"/>
+                <field name="gender"/>
+                <field name="job_type"/>
+                <field name="is_manager"/>
+                <field name="manager_id"/>
+                <field name="related_user"/>
+                <field name="employee_ids"/>
+                <field name="increment_percentage"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_employee_ksc_profile" model="ir.actions.act_window">
+        <field name="name">Leaves</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">employee.ksc</field>
+        <field name="view_mode">tree,form,search</field>
+    </record>
+
+    <!--main Menu Item Show On Front Of Side -->
+    <menuitem id="employee_ksc_sub_menu" parent="employee_menu"
+              action="action_employee_ksc_profile" name="Leaves" groups="base.group_user"/>
+
+</odoo>

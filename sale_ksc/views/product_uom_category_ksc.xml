@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record id="product_uom_category_ksc_list_view" model="ir.ui.view">
+            <field name="name">product.uom.category.ksc.list.view</field>
+            <field name="model">product.uom.category.ksc</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="uom_ids"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <record id="product_uom_category_ksc_form_view" model="ir.ui.view">
+            <field name="name">product.uom.category.ksc.form.view</field>
+            <field name="model">product.uom.category.ksc</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <sheet>
+                            <field name="name"/>
+                            <field name="uom_ids"/>
+                        </sheet>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+
+        <record id="product_uom_category_ksc_search_view" model="ir.ui.view">
+            <field name="name">product.uom.category.ksc.search.view</field>
+            <field name="model">product.uom.category.ksc</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="name"/>
+                </search>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_product_uom_category_ksc_menu">
+            <field name="name">Product</field>
+            <field name="res_model">product.ksc</field>
+            <field name="view_mode">tree,form,search</field>
+        </record>
+        <menuitem id="product_ksc_menu" action="action_product_menu" name="Product"/>
+        <menuitem id="my_sales_product_ksc_menu" action="action_product_menu" parent="product_ksc_menu"
+                  name="My Sales"/>
+
+    </data>
+</odoo>

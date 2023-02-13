@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<odoo>
+    <!--    TreeView-->
+    <record id="view_employee_department_ksc_tree" model="ir.ui.view">
+        <field name="name">employee.department.ksc Tree View</field>
+        <field name="model">employee.department.ksc</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="department_name"/>
+                <field name="employees"/>
+                <field name="department_manager"/>
+            </tree>
+        </field>
+    </record>
+
+    <!--            FormView         -->
+
+    <record id="view_employee_department_ksc_form" model="ir.ui.view">
+        <field name="name">employee.department.ksc Form View</field>
+        <field name="model">employee.department.ksc</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                        <field name="department_name"/>
+                        <field name="employees"/>
+                        <field name="department_manager"/>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <!--    SearchView   -->
+    <record id="view_employee_department_ksc_search" model="ir.ui.view">
+        <field name="name">employee.department.ksc Form View</field>
+        <field name="model">employee.department.ksc</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="department_name"/>
+                <field name="employees"/>
+                <field name="department_manager"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_employee_department_ksc_profile" model="ir.actions.act_window">
+        <field name="name">Employee</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">employee.department.ksc</field>
+        <field name="view_mode">tree,form,search</field>
+    </record>
+
+    <!--main Menu Item Show On Front Of Side -->
+    <menuitem id="employee_menu" name="Employee" groups="base.group_user"/>
+    <menuitem id="employee_main_menu" parent="employee_menu" action="action_employee_department_ksc_profile" name="Department" groups="base.group_user"/>
+
+</odoo>

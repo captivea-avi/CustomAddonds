@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record id="sale_order_ksc_list_view" model="ir.ui.view">
+            <field name="name">sale.order.ksc.list.view</field>
+            <field name="model">sale.order.ksc</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="customer"/>
+                    <field name="invoice_customer"/>
+                    <field name="shipping_customer"/>
+                    <field name="sale_order_date"/>
+                    <field name="order_line"/>
+                    <field name="salesperson"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <record id="sale_order_ksc_form_view" model="ir.ui.view">
+            <field name="name">sale.order.ksc.form.view</field>
+            <field name="model">sale.order.ksc</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <field name="name"/>
+                        <field name="customer"/>
+                        <field name="invoice_customer"/>
+                        <field name="shipping_customer"/>
+                        <field name="sale_order_date"/>
+                        <field name="order_line"/>
+                        <field name="salesperson"/>
+                        <field name="state"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+<!--        <record id="sale_order_ksc_search_view" model="ir.ui.view">-->
+<!--            <field name="name">sale.order.ksc.search.view</field>-->
+<!--            <field name="model">sale.order.ksc</field>-->
+<!--            <field name="arch" type="xml">-->
+<!--                <search>-->
+<!--                    <group>-->
+<!--                        <field name="order_no"/>-->
+<!--                        <field name="customer_id"/>-->
+<!--                        <field name="invoice_customer_id"/>-->
+<!--                        <field name="shipping_customer_id"/>-->
+<!--                        <field name="sale_order_date"/>-->
+<!--                        <field name="order_line_ids"/>-->
+<!--                        <field name="salesperson_id"/>-->
+<!--                        <field name="state"/>-->
+<!--                    </group>-->
+<!--                </search>-->
+<!--            </field>-->
+<!--        </record>-->
+
+        <record model="ir.actions.act_window" id="action_sale_order_ksc_menu">
+            <field name="name">Orders</field>
+            <field name="res_model">sale.order.ksc</field>
+            <field name="view_mode">tree,form,search</field>
+        </record>
+        <menuitem id="sale_order_ksc_main_menu" action="action_sale_order_ksc_menu" name="Orders"/>
+        <menuitem id="sale_order_ksc_sub_menu" action="action_res_partner_ksc_menu" parent="sale_order_ksc_main_menu"
+                  name="My Sales"/>
+
+    </data>
+</odoo>
